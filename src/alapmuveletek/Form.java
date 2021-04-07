@@ -229,12 +229,14 @@ public int eredmeny;
     public void kiszamol() {
         Random r = new Random();
         boolean jo;
-        osztando = r.nextInt(100);
+        osztando = r.nextInt(101);
+        
         do {
-            oszto = r.nextInt(100) + 1;
-            jo = osztando % oszto == 0;
+            oszto = r.nextInt(101) + 1;
+            eredmeny = osztando / oszto;
+            jo = osztando % oszto == 0 && eredmeny <= 100;
         } while (!jo);
-        eredmeny = osztando / oszto;
+        
         feladatKiir(osztando, oszto);
     }
     
